@@ -56,17 +56,25 @@
 	[self updateSelectedWordLabel];
 }
 
+- (NSRange)selectedWordRange
+{
+    return [[self.label.attributedText string] rangeOfString: [self selectedWord]];
+}
+
 - (void) addAttributeForSelectedWord: (NSString*) attribute value: (id)value
 {
-	NSRange range = [[self.label.attributedText string] rangeOfString: [self selectedWord]];
-	
 	NSMutableAttributedString* as = self.label.attributedText.mutableCopy;
-	
-	[as addAttribute: attribute	value: value range: range];
-	
-	self.label.attributedText = as;
-	
+	[as addAttribute: attribute	value: value range: [self selectedWordRange]];
+	self.label.attributedText = as;	
 }
+
+- (void) addAttributesForSelectedWord: (NSDictionary*) attributes
+{
+	NSMutableAttributedString* as = self.label.attributedText.mutableCopy;
+	[as addAttributes: attributes range: [self selectedWordRange]];
+	self.label.attributedText = as;
+}
+
 
 - (IBAction)selectedNewWord {
 	[self updateSelectedWordLabel];
@@ -81,6 +89,23 @@
 - (IBAction)updateFontColor:(UIButton *)sender {
 	[self addAttributeForSelectedWord: NSForegroundColorAttributeName value: sender.backgroundColor];
 }
+
+- (IBAction)underline:(UIButton *)sender {
+	[self addAttributeForSelectedWord: NSUnderlineStyleAttributeName value: @(NSUnderlineStyleSingle)];
+}
+
+- (IBAction)ununderline:(UIButton *)sender {
+	[self addAttributeForSelectedWord: NSUnderlineStyleAttributeName value: @(NSUnderlineStyleNone)];
+}
+
+- (IBAction)outline:(UIButton *)sender {
+	[self addAttributesForSelectedWord: @{NSStrokeWidthAttributeName : @(-5), NSStrokeColorAttributeName: [UIColor redColor]}];
+}
+
+- (IBAction)unoutline:(UIButton *)sender {
+	[self addAttributeForSelectedWord: NSStrokeWidthAttributeName value: @(0)];
+}
+
 
 
 @end

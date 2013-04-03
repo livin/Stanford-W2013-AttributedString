@@ -160,6 +160,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="underline:" destination="2" eventType="touchUpInside" id="P9G-8a-f3m"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7gX-Q6-4yh">
                                 <rect key="frame" x="170" y="346" width="112" height="44"/>
@@ -172,6 +175,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="outline:" destination="2" eventType="touchUpInside" id="ebc-hJ-o0y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8qW-OU-5Cn">
                                 <rect key="frame" x="39" y="397" width="112" height="44"/>
@@ -184,6 +190,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="ununderline:" destination="2" eventType="touchUpInside" id="9dl-z1-0Fz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LEZ-Tb-yjS">
                                 <rect key="frame" x="170" y="397" width="112" height="44"/>
@@ -196,6 +205,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="unoutline:" destination="2" eventType="touchUpInside" id="kxG-SB-l19"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -214,6 +226,10 @@
         <class className="AttributedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AttributedViewController.h"/>
             <relationships>
+                <relationship kind="action" name="noOutline:" candidateClass="UIButton"/>
+                <relationship kind="action" name="noUnderline:" candidateClass="UIButton"/>
+                <relationship kind="action" name="outline:" candidateClass="UIButton"/>
+                <relationship kind="action" name="underline:" candidateClass="UIButton"/>
                 <relationship kind="action" name="updateFont:" candidateClass="UIButton"/>
                 <relationship kind="action" name="updateFontColor:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="label" candidateClass="UILabel"/>
