@@ -38,10 +38,16 @@
 	self.selectedWorkStepper.maximumValue = [self.wordList count] - 1;
 }
 
+- (NSString*) selectedWord
+{
+	return self.wordList[(NSUInteger)self.selectedWorkStepper.value];
+}
+
 - (void) updateSelectedWordLabel
 {
-	self.selectedWordLabel.text = self.wordList[(NSUInteger)self.selectedWorkStepper.value];
+	self.selectedWordLabel.text = [self selectedWord];
 }
+
 
 - (void)viewDidLoad
 {
@@ -50,8 +56,26 @@
 	[self updateSelectedWordLabel];
 }
 
+- (void) addAttributeForSelectedWord: (NSString*) attribute value: (id)value
+{
+	NSRange range = [[self.label.attributedText string] rangeOfString: [self selectedWord]];
+	
+	NSMutableAttributedString* as = self.label.attributedText.mutableCopy;
+	
+	[as addAttribute: attribute	value: value range: range];
+	
+	self.label.attributedText = as;
+	
+}
+
 - (IBAction)selectedNewWord {
 	[self updateSelectedWordLabel];
+}
+
+- (IBAction)updateFont:(UIButton *)sender {
+	UIFont* newFont = [sender.titleLabel.font fontWithSize: self.label.font.pointSize];
+	
+	[self addAttributeForSelectedWord:NSFontAttributeName value: newFont];
 }
 
 @end
