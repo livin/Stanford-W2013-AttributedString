@@ -78,4 +78,9 @@
 	[self addAttributeForSelectedWord:NSFontAttributeName value: newFont];
 }
 
+- (IBAction)updateFontColor:(UIButton *)sender {
+	[self addAttributeForSelectedWord: NSForegroundColorAttributeName value: sender.backgroundColor];
+}
+
+
 @end
