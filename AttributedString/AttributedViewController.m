@@ -81,7 +81,10 @@
 }
 
 - (IBAction)updateFont:(UIButton *)sender {
-	UIFont* newFont = [sender.titleLabel.font fontWithSize: self.label.font.pointSize];
+	NSDictionary* attrs = [self.label.attributedText attributesAtIndex: 0 effectiveRange: NULL];
+	UIFont* existingFont = attrs[NSFontAttributeName];
+	
+	UIFont* newFont = [sender.titleLabel.font fontWithSize: existingFont.pointSize];
 	
 	[self addAttributeForSelectedWord:NSFontAttributeName value: newFont];
 }
