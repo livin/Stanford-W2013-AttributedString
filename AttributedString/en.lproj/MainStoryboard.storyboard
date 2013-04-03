@@ -78,7 +78,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Blue">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -94,7 +94,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Black">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -226,12 +226,8 @@
         <class className="AttributedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AttributedViewController.h"/>
             <relationships>
-                <relationship kind="action" name="noOutline:" candidateClass="UIButton"/>
-                <relationship kind="action" name="noUnderline:" candidateClass="UIButton"/>
-                <relationship kind="action" name="outline:" candidateClass="UIButton"/>
-                <relationship kind="action" name="underline:" candidateClass="UIButton"/>
+                <relationship kind="action" name="unoutline:" candidateClass="UIButton"/>
                 <relationship kind="action" name="updateFont:" candidateClass="UIButton"/>
-                <relationship kind="action" name="updateFontColor:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="label" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="selectedWordLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="selectedWorkStepper" candidateClass="UIStepper"/>
