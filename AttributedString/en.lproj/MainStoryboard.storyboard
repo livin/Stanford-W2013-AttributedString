@@ -36,6 +36,9 @@
                             <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="Wvi-pE-2Bw">
                                 <rect key="frame" x="20" y="17" width="94" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <action selector="selectedNewWord" destination="2" eventType="valueChanged" id="5cK-zJ-SGZ"/>
+                                </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lh8-Wr-EeF">
                                 <rect key="frame" x="20" y="197" width="65" height="65"/>
@@ -176,6 +179,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="oBY-Jc-cVR" id="8dz-r7-pyc"/>
+                        <outlet property="selectedWordLabel" destination="MKI-Lp-rw1" id="0Pj-R0-4ic"/>
+                        <outlet property="selectedWorkStepper" destination="Wvi-pE-2Bw" id="CdA-2X-L0S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -184,6 +192,11 @@
     <classes>
         <class className="AttributedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AttributedViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="selectedWordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="selectedWorkStepper" candidateClass="UIStepper"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
